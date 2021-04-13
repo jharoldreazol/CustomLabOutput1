@@ -3,11 +3,11 @@ import time
 import requests
 from ncclient import manager
 
-router = {"host": "10.10.20.48", "port": "830","username": "developer", "password": "C1sco12345"}
+router = {"host": "ip-address-here", "port": "830","username": "username-here", "password": "password-here"}
 config_template = open("C:/Repositories/CustomLab/ios_config.xml").read()
 
-access_token = "MzI1NDVhMzgtMTliMy00ODM5LTljMDMtMzk3ZTg0ZDU0NDU4MzUyODRkNzQtZjE3_P0A1_5d96674f-de50-43d7-ae6b-8071b71cb457"
-room_id="Y2lzY29zcGFyazovL3VybjpURUFNOnVzLXdlc3QtMl9yL1JPT00vZjFkNWZjMTAtOTljMi0xMWViLTg5YWUtZmI4MDYxZDUxNmNm"
+access_token = "webex-token-here"
+room_id="room-id here"
 webex_url = 'https://webexapis.com/v1/messages'
 webex_headers = {
     'Authorization': 'Bearer {}'.format(access_token),
@@ -43,7 +43,7 @@ while flag:
                     print(device_reply)
                 reply_message=int_name+ "'s Description has been changed to "+message
                 params = {
-                    "toPersonEmail": "reazoljayharold@gmail.com",
+                    "toPersonEmail": "email@adress.com",
                     "text": reply_message
                     }
                 res = requests.post(webex_url, data=json.dumps(params), headers=webex_headers, verify=False)
